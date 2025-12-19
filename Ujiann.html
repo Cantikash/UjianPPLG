@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptInternal</title>
+	</head>
+	
+		<body>
+		<script>
+		//lkpd 6 no 1//
+		
+let jumlah_siswa = 2;
+let juara = [];
+
+for (let i = 1; i <= jumlah_siswa; i++) {
+  console.log(`--- Data siswa ke-${i} ---`);
+  
+  let nama = prompt("Nama siswa:");
+  let nilaiMTK = parseFloat(prompt("Nilai MTK:"));
+  let nilaiINDO = parseFloat(prompt("Nilai INDO:"));
+
+  let total = nilaiMTK + nilaiINDO;
+  let rata = total / 2;
+
+  let kehadiran = parseFloat(prompt("Input kehadiran:"));
+
+  if (total >= 200 && kehadiran === 100) {
+    juara.push({ nama, total, rata });
+  }
+}
+
+console.log("=== hasil juara kelas ===");
+
+if (juara.length === 0) {
+  console.log("Tidak ada siswa yang memenuhi kriteria juara kelas");
+} else {
+  juara.forEach(s => {
+    console.log(`Nama: ${s.nama}, Total nilai: ${s.total}, Rata-rata: ${s.rata.toFixed(2)}`);
+  });
+}
+		</script>
+		</body>
+		</html>
